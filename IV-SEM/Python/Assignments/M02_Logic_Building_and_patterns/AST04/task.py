@@ -1,12 +1,9 @@
-def Reverse_String(s: str) -> str:
-    reversed_str = ""
-    
-    for i in range(len(s) - 1, -1, -1):
-        reversed_str += s[i]
-    
-    return reversed_str
+def right_triangle(n: int) -> str:
+    lines = []
+    for i in range(1, n + 1):
+        lines.append("*" * i)
+    return "\n".join(lines)
 
-
-if __name__ == '__main__':
-    s = input()
-    print(Reverse_String(s))
+if __name__ == "__main__":
+    n = int(input())
+    print(right_triangle(n))
