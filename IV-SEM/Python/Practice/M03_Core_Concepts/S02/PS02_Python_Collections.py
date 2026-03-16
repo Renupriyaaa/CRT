@@ -1,6 +1,10 @@
 #Collections in Python
 """
 1) List : ordered, mutable, allows duplicate elements
+2) Tuple : ordered, immutable, allows duplicate elements
+3) Set : unordered, mutable, does not allow duplicate elements
+4) Dictionary : unordered, mutable, does not allow duplicate keys
+5) String : ordered, immutable, allows duplicate characters
 """
 
 # Creating a List
@@ -97,4 +101,49 @@ a = {10, 20, 30, 40, 50}
 print(a)
 b = set((10, 20, 30, 40, 50))
 print(b)
+"""
+
+# Accessing set elements
+"""
+t = (10, 20, 30, 40, 50)
+print(t)
+t1 = tuple((10, 20, 30, 40, 50))
+print(t1)
+print(t[0])
+print(t[-1])
+print(t + t1)
+print(tuple(t,t1))
+print(t * 3)
+print(t[0:])
+print(t1[1:3])
+del t
+print(t)
+"""
+
+# leet code : 349. Intersection of Two Arrays
+"""
+def intersection(nums1, nums2):
+    return list(set(nums1) & set(nums2))
+nums1 = [1, 2, 2, 1]
+nums2 = [2, 2]
+print(intersection(nums1, nums2))
+"""
+
+# leet code : 657. Robot Return to Origin
+"""
+class solution:
+    def judgeCircle(moves):
+        pos = (0,0)
+        for move in moves:
+            if move == 'U':
+                pos = (pos[0], pos[1] + 1)
+            elif move == 'D':
+                pos = (pos[0], pos[1] - 1)  
+            elif move == 'L':
+                pos = (pos[0] + 1, pos[1])
+            elif move == 'R':
+                pos = (pos[0] - 1, pos[1])
+        return pos == (0, 0)
+    moves = "UD"
+    print(solution.judgeCircle(moves))
 """
